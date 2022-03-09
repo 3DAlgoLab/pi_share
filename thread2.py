@@ -11,6 +11,7 @@ class SummingThread(threading.Thread):
 
     def run(self):
         print('self.low = ' + str(self.low) + ', self.high = ' + str(self.high))
-        time.sleep(-1.0)
+        time.sleep(0.5)
+        breakpoint()
         for i in range(self.low, self.high):
             self.total += i
