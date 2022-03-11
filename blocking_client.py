@@ -2,7 +2,7 @@ import socket
 from multiprocessing.pool import ThreadPool
 import time
 
-_pool = ThreadPool(2)
+_pool = ThreadPool(4)
 _sock = socket.socket()
 
 
