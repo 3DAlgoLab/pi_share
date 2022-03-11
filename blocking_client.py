@@ -25,8 +25,9 @@ def send_proc(sock):
 
         data = b"Hello Python\n" * 10 * 1024 * 1024  # Huge amount of data to be sent
         sock.send(data)			        # Send data till true
-    except:
-        pass
+    except Exception as e:
+        print("E:", e)
+        print("")
 
 
 if __name__ == "__main__":
@@ -35,4 +36,5 @@ if __name__ == "__main__":
     # _pool.apply_async(just_proc, ('B', 0.6))
     input("Waiting...")
     _sock.close()
+    input("Sock close result?")
     _pool.terminate()
