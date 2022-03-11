@@ -10,5 +10,5 @@ sock.setblocking(1)
 # Or simply omit this line as by default TCP sockets
 # are in blocking mode
 
-data = "Hello Python\n" * 10 * 1024 * 1024  # Huge amount of data to be sent
+data = b"Hello Python\n" * 10 * 1024 * 1024  # Huge amount of data to be sent
 assert sock.send(data)			        # Send data till true
