@@ -34,5 +34,5 @@ if __name__ == "__main__":
     # _pool.apply_async(just_proc, ('A', 0.5))
     # _pool.apply_async(just_proc, ('B', 0.6))
     input("Waiting...")
+    _sock.close()
     _pool.terminate()
-    # _sock.close()

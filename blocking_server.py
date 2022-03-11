@@ -16,7 +16,7 @@ while True:
 
     data = conn.recv(1024)
     while data:			        # till data is coming
-        print(data)
+        print(data.decode('utf-8'))
         data = conn.recv(1024)
     print("All Data Received")  # Will execute when all data is received
     conn.close()
