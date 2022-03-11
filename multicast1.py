@@ -1,6 +1,7 @@
 import socket
 import struct
 
+# ref: PYMOW3
 
 message = b'very important data'
 multicast_group = ('224.3.29.71', 10000)
@@ -13,11 +14,12 @@ sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, ttl)
 
 
 try:
-    # send data to the multicast group
-    print('sending {!r}'.format(message))
-    sent = sock.sendto(message, multicast_group)
-    # Look for response from all recipients
     while True:
+        # send data to the multicast group
+        print('sending {!r}'.format(message))
+        sent = sock.sendto(message, multicast_group)
+        # Look for response from all recipients
+
         print('waiting to receive')
         try:
             data, server = sock.recvfrom(100)
