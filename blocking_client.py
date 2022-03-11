@@ -39,5 +39,5 @@ if __name__ == "__main__":
     _sock.close()
     input("Sock close result?")
     _pool.terminate()
-
+    del _pool
     input("Waiting Finished!")
