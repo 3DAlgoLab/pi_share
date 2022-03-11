@@ -2,7 +2,7 @@ import socket
 
 sock = socket.socket()
 # host = socket.gethostname()
-host = 'tal-works'
+host = '192.168.0.104'
 sock.connect((host, 12345))
 
 sock.setblocking(1)
