@@ -24,6 +24,7 @@ def send_proc(sock):
         # are in blocking mode
 
         data = b"Hello Python\n" * 10 * 1024 * 1024  # Huge amount of data to be sent
+        data += b"Quit!!!\n"
         sock.send(data)			        # Send data till true
     except Exception as e:
         print("E:", e)
