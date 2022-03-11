@@ -7,7 +7,7 @@ _sock = socket.socket()
 
 
 def just_proc(id, duration):
-    for i in range(100):
+    for i in range(10):
         print(f"ID {id}: {i}")
         time.sleep(duration)
 
