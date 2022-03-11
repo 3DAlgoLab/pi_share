@@ -25,6 +25,6 @@ def send_proc(sock):
 
 if __name__ == "__main__":
     _pool.apply(send_proc, (_sock,))
-    input()
+    input("Waiting...")
     _pool.terminate()
     _sock.close()
