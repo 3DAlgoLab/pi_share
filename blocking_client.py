@@ -1,9 +1,15 @@
 import socket
 from multiprocessing.pool import ThreadPool
-
+import time
 
 _pool = ThreadPool(2)
 _sock = socket.socket()
+
+
+def just_proc(id, duration):
+    for i in range(100):
+        print("ID {id}: {i}")
+        time.sleep(duration)
 
 
 def send_proc(sock):
@@ -24,7 +30,9 @@ def send_proc(sock):
 
 
 if __name__ == "__main__":
-    _pool.apply(send_proc, (_sock,))
+    # _pool.apply(send_proc, (_sock,))
+    _pool.apply(just_proc, ('A', 0.5))
+    _pool.apply(just_proc, ('B', 0.6))
     input("Waiting...")
     _pool.terminate()
-    _sock.close()
+    # _sock.close()
