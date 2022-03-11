@@ -31,8 +31,8 @@ def send_proc(sock):
 
 if __name__ == "__main__":
     # _pool.apply(send_proc, (_sock,))
-    _pool.apply(just_proc, ('A', 0.5))
-    _pool.apply(just_proc, ('B', 0.6))
+    _pool.apply_async(just_proc, ('A', 0.5))
+    _pool.apply_async(just_proc, ('B', 0.6))
     input("Waiting...")
     _pool.terminate()
     # _sock.close()
