@@ -5,7 +5,7 @@ sock = socket.socket()
 host = '192.168.0.104'
 sock.connect((host, 12345))
 
-sock.setblocking(1)
+sock.setblocking(0)
 
 # Or simply omit this line as by default TCP sockets
 # are in blocking mode
